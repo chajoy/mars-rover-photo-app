@@ -1,0 +1,104 @@
+@use "../utils/variables.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background: url("../assets/img/jeremy-perkins-uhjiu8FjnsQ-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: variables.$fontcolor;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+button {
+  cursor: pointer;
+}
+
+.sidebar {
+  background-color: rgba(52, 57, 82, 0.7);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  width: 300px;
+  height: 100%;
+  display: grid;
+  padding: 20px;
+  gap: 20px;
+  grid-template-rows: repeat(4, auto) 1fr;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .card {
+    padding: 20px;
+    background-color: variables.$blue;
+    border-radius: 20px;
+    box-shadow: 0 0 10px black;
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+    width: 70%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+
+    img {
+      border-radius: 20px;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
