@@ -1,5 +1,3 @@
-// Docs on request and context https://docs.netlify.com/functions/build/#code-your-function-2
-
 export default async (request, context) => {
   try {
     const url = new URL(request.url);

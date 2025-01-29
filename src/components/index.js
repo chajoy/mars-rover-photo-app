@@ -1,5 +1,5 @@
 import "../styles/styles.scss";
-import { Cards } from "./dom";
+import { Cards, Status } from "./dom";
 
 const input = {
   date: document.getElementById("input_date"),
@@ -12,7 +12,9 @@ input.button_search.addEventListener("click", () => {
 
 const fetchAPI = async (date) => {
   if (!date) {
-    console.error("no date specified");
+    let errorMsg = "no date specified";
+    console.error(errorMsg);
+    Status.set("error", errorMsg);
     return;
   }
   try {
@@ -24,8 +26,20 @@ const fetchAPI = async (date) => {
 
     const data = await response.json();
 
+    if (data.photos.length === 0) {
+      console.error("No photos found");
+      Status.set("error", "no photos found");
+      return;
+    }
+
+    console.log(data.photos);
+
+    Status.clear();
     Cards.clear();
-    Cards.create(data.photos[0].img_src);
+
+    for (let x = 0; x < data.photos.length; x++) {
+      Cards.create(data.photos[x].img_src);
+    }
   } catch (error) {
     console.error(error.message);
   }
