@@ -2,7 +2,6 @@ import "./styles/styles.scss";
 import { rovers } from "./constants/constants";
 import { fetchAPI } from "./components/api";
 import { Cards, Status } from "./components/dom";
-import { Debug } from "./debug";
 
 const input = {
   date: document.getElementById("input_date"),
