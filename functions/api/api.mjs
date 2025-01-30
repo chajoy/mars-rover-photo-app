@@ -2,13 +2,14 @@ export default async (request, context) => {
   try {
     const url = new URL(request.url);
     const date = url.searchParams.get("date") || null;
+    const rover = url.searchParams.get("rover") || null;
 
     const params = new URLSearchParams({
       api_key: process.env.API_KEY,
       earth_date: date,
     });
 
-    const fetchURL = `${process.env.API_URL}?${params}`;
+    const fetchURL = `${process.env.API_URL}${rover}/photos?${params}`;
 
     const response = await fetch(fetchURL);
     if (!response.ok) {

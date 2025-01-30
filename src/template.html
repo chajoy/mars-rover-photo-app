@@ -15,7 +15,11 @@
   <body>
     <div class="sidebar">
       <h1>RoverLens</h1>
-      <input type="date" id="input_date" />
+      <select id="rover-select">
+        <option value="curiosity">curiosity</option>
+        <option value="perseverance">perseverance</option>
+      </select>
+      <input type="date" id="input_date" min="2012-08-06" />
       <button id="btn_search">search</button>
       <p id="status">select date</p>
     </div>
