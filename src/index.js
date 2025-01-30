@@ -2,6 +2,7 @@ import "./styles/styles.scss";
 import { rovers } from "./constants/constants";
 import { fetchAPI } from "./components/api";
 import { Cards, Status } from "./components/dom";
+import { Debug } from "./debug";
 
 const input = {
   date: document.getElementById("input_date"),
@@ -35,7 +36,7 @@ input.button_search.addEventListener("click", () => {
       Status.set("", `Photos Found: ${amount_photos}`);
 
       for (let x = 0; x < amount_photos; x++) {
-        Cards.create(data.photos[x].img_src);
+        Cards.create(data.photos[x]);
       }
     }
   });

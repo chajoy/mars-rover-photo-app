@@ -1,15 +1,34 @@
 const Cards = (() => {
   const main = document.querySelector("main");
-  const create = (imgsrc) => {
+  const create = (imgdata) => {
     const card = {
       container: document.createElement("div"),
-      img: document.createElement("img"),
+      front: document.createElement("img"),
+      back: document.createElement("div"),
+      camera: document.createElement("h2"),
     };
 
-    card.container.classList.add("card");
-    card.img.src = imgsrc;
+    card.camera.textContent = `camera: ${imgdata.camera.name}`;
 
-    card.container.appendChild(card.img);
+    card.back.append(card.camera);
+
+    card.container.classList.add("card");
+
+    card.front.src = imgdata.img_src;
+    card.front.classList.add("front");
+    card.front.setAttribute("draggable", false);
+
+    card.back.classList.add("back");
+
+    card.container.append(card.front, card.back);
+
+    card.container.addEventListener("click", () => {
+      let activeCard = document.querySelector(".flip");
+      if (activeCard && activeCard !== card.container) {
+        activeCard.classList.remove("flip");
+      }
+      card.container.classList.toggle("flip");
+    });
 
     main.append(card.container);
   };
