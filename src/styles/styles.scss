@@ -100,6 +100,11 @@ main {
     width: 100%;
     position: relative;
 
+    p {
+      border-bottom: 1px solid white;
+      padding: 20px 0;
+    }
+
     .front,
     .back {
       position: absolute;

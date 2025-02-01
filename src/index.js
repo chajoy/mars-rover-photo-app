@@ -1,5 +1,5 @@
 import "./styles/styles.scss";
-import { rovers } from "./constants/constants";
+import { landing_dates } from "./constants/constants";
 import { fetchAPI } from "./components/api";
 import { Cards, Status } from "./components/dom";
 
@@ -11,9 +11,7 @@ const input = {
 
 input.rover_select.addEventListener("input", () => {
   let selected_rover = input.rover_select.value;
-  let landing_date = rovers.find(
-    (rover) => rover.name === selected_rover
-  ).landing_date;
+  let landing_date = landing_dates[selected_rover];
   input.date.setAttribute("min", landing_date);
 });
 

@@ -1,4 +1,5 @@
-import { Cards, Status } from "./dom";
+import { Status } from "./dom";
+import { camera_names } from "../constants/constants";
 
 const fetchAPI = async (rover, date) => {
   if (!date || !rover) {
@@ -20,6 +21,17 @@ const fetchAPI = async (rover, date) => {
     }
 
     const data = await response.json();
+
+    data.photos.forEach((photo) => {
+      let camera = photo.camera.name;
+      let desc;
+      for (let key in camera_names) {
+        if (camera.includes(key)) {
+          desc = camera_names[key];
+        }
+      }
+      photo.camera.desc = desc || camera;
+    });
 
     return data;
   } catch (error) {

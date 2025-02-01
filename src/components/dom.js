@@ -5,12 +5,14 @@ const Cards = (() => {
       container: document.createElement("div"),
       front: document.createElement("img"),
       back: document.createElement("div"),
-      camera: document.createElement("h2"),
+      camera: document.createElement("p"),
+      desc: document.createElement("p"),
     };
 
     card.camera.textContent = `camera: ${imgdata.camera.name}`;
+    card.desc.textContent = `desc: ${imgdata.camera.desc}`;
 
-    card.back.append(card.camera);
+    card.back.append(card.camera, card.desc);
 
     card.container.classList.add("card");
 
