@@ -7,5 +7,5 @@ Browse images from the Curiosity and Perseverance rovers via NASA's API. Flip ea
 ## Checklist
 - [X] Responsive Layout for Tablet and Mobile
 - [X] Add Perseverence Photo Data
-- [ ] Mars Weather & Photo of the Day: Display the latest weather data from Mars and a random "Photo of the Day" on the homepage.
+- [ ] Photo of the Day: Display a random "Photo of the Day" on the homepage.
 - [ ] Expanded Photo Details: Add more information to the back of the photo cards
