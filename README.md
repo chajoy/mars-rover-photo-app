@@ -2,8 +2,6 @@
 
 Browse images from the Curiosity and Perseverance rovers via NASA's API. Flip each one for camera info, with more details to be added later.
 
-[Here](https://marsroverphotoapp.netlify.app/)
-
 ## Checklist
 - [X] Responsive Layout for Tablet and Mobile
 - [X] Add Perseverence Photo Data
